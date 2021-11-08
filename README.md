@@ -1,6 +1,6 @@
 <h1 align="center" style="border-bottom: none">
     <b>
-        <a href="#">sCalculator</a><br>
+        <a href="https://scalculadora.netlify.app/">sCalculator</a><br>
     </b>
     :collision:Simple calculator App:collision:<br>
 </h1>
@@ -10,7 +10,7 @@ For learning purposes, I saw a video tutorial to create a calculator app handlin
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/emicasso/sCalculator)
 
 ### Live Demo
-* [sCalculator]()
+* [sCalculator](https://scalculadora.netlify.app/)
 
 ## Starting 🚀
 
@@ -44,6 +44,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Author
 
