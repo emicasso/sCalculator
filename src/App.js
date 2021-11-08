@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import OutputDisplay from "./componets/OutputDisplay";
+import InputKeys from "./componets/InputKeys";
+import { useState } from "react";
+import { evaluate } from "mathjs";
 
 function App() {
+  const [input, setInput] = useState("");
+  const [output, setOutput] = useState("");
+  const [error, setError] = useState("");
+
+  const setIntputValue = (value) => {
+    if(value !== "="){
+      setOutput('')
+      setError('')
+    }
+
+
+    if (value === "All Clear") {
+      setInput("");
+    } else if (value === "Clear") {
+      setInput(input.slice(0, -1));
+    } else if (value === "=") {
+      genertateOutput();
+      setInput('')
+    } else {
+      setInput(input + value);
+    }
+  };
+
+  const genertateOutput = () => {
+    try {
+      const out = evaluate(input);
+      setOutput(out);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>X</div>
+      <div>+</div>
+      <div>%</div>
+      <div>=</div>
+      <h1>Calcutor app</h1>
+
+      <OutputDisplay input={input} output={output} error={error} />
+      <InputKeys setIntputValue={setIntputValue} />
     </div>
   );
 }
